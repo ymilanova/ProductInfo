@@ -1,16 +1,39 @@
-﻿<Window x:Class="ProductInfo.MainWindow"
+﻿<Window x:Class="ProductInfo.MainWindow" Background="#17203D" 
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProductInfo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <TextBox HorizontalAlignment="Left" Margin="548,74,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="548,240,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <ComboBox HorizontalAlignment="Left" Margin="116,83,0,0" VerticalAlignment="Top" Width="120"/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="69,163,516,54" SelectionChanged="ListBox_SelectionChanged"/>
+        Title="Productkatalog" Height="357" Width="456" Name="Prog">
+    <WindowChrome.WindowChrome>
+        <WindowChrome />
+    </WindowChrome.WindowChrome>
+
+    <Grid Margin="0,0,10,10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="116*"/>
+            <RowDefinition Height="215*"/>
+        </Grid.RowDefinitions>
+
+        <TextBox Text="" Name="ProductTxt" Margin="0,90,50,0" TextWrapping="Wrap" RenderTransformOrigin="0.525,-0.862" HorizontalAlignment="Right" Width="143" Height="18" VerticalAlignment="Top" Background="#051622" Foreground="White"/>
+        <TextBox Text="" Name="PriceTxt" Margin="253,0,50,147" TextWrapping="Wrap" Grid.Row="1" RenderTransformOrigin="0.18,1.138" Height="18" VerticalAlignment="Bottom" Background="#051622" Foreground="White"/>
+        <ComboBox Name="CategoryCB" Margin="26,88,0,0" VerticalAlignment="Top" SelectionChanged="CatregoryCB_SelectionChanged" HorizontalAlignment="Left" Width="166" Foreground="#051622"/>
+        <ListBox Name="ProductsLB" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="26,50,254,38" SelectionChanged="ListBox_SelectionChanged" Background="#051622" Foreground="White" Grid.Row="1" />
+        <Label Content="Produktname:" HorizontalAlignment="Left" Margin="257,51,0,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="-2.054,0.361" Width="102" FontWeight="Bold" Foreground="White">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-2.575"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.465"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Preis:" HorizontalAlignment="Left" Margin="253,14,0,0" VerticalAlignment="Top" Width="46" FontSize="14" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.524,0.17" Grid.Row="1"/>
+        <Label Content="Kategorien:" Margin="26,54,322,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Foreground="White"/>
+        <Label Content="Produkte:" Margin="26,14,336,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Foreground="White" Grid.Row="1" RenderTransformOrigin="-0.05,0.577"/>
+        <Button Content="Beenden" Margin="0,131,82,52" Grid.Row="1" Background="#051622" Foreground="White" Click="Button_Click" HorizontalAlignment="Right" Width="79"/>
 
     </Grid>
 </Window>

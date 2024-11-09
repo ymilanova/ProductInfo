@@ -8,11 +8,9 @@ using System.Threading.Tasks;
 
 namespace ProductInfo
 {
-    class Product
+    public class Product
     {
-        public string? ProductName { get; set; }
-
-        public int ProductPrice { get; set; }
-   
+        public string? Name { get; set; }
+        public int Price { get; set; }
     }
 }
